@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMA. — A cycling coach with a memory</title>
+<meta name="description" content="Forma takes one hundred founding members. A cycling coach who reads every ride, remembers every conversation, and builds a plan that bends around your life.">
+<meta property="og:title" content="FORMA. — A cycling coach with a memory">
+<meta property="og:description" content="One hundred founding members. When the places are gone, the doors close.">
+<meta property="og:url" content="https://ridewithforma.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,650..800&family=Inter+Tight:wght@400;500&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B0C; --paper:#FAFAF7; --chalk:#F0F0EC; --slate:#9A9A94;
+    --carbon:#101012; --flamme:#FF3D00;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter Tight',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+  .kicker.flamme{color:var(--flamme)}
+  .display{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .dot{color:var(--flamme)}
+
+  header{padding:28px 0;border-bottom:1px solid var(--ink)}
+  header .wrap{display:flex;justify-content:space-between;align-items:baseline}
+  .wordmark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
+
+  .hero{padding:96px 0 72px}
+  .hero h1{font-size:clamp(44px,8vw,76px);margin:20px 0 28px}
+  .hero p.lede{font-size:20px;max-width:560px;color:#3C3C3A}
+
+  .rule{border:none;border-top:1px solid var(--ink)}
+  .hair{border:none;border-top:1px solid var(--chalk)}
+
+  .club{padding:72px 0}
+  .club .big{font-size:clamp(96px,20vw,180px);line-height:1}
+  .club h2{font-family:'Archivo',sans-serif;font-weight:650;font-size:28px;margin:12px 0 20px}
+  .club p{max-width:560px;color:#3C3C3A}
+
+  .form-block{padding:72px 0 96px}
+  .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:32px;margin:16px 0 24px}
+  form{display:flex;gap:0;max-width:560px;margin-top:8px}
+  input[type=email]{flex:1;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:18px 20px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;outline:none;min-width:0}
+  input[type=email]::placeholder{color:var(--slate)}
+  input[type=email]:focus{border-color:var(--flamme)}
+  button{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:18px 28px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);cursor:pointer;white-space:nowrap}
+  button:hover{background:var(--flamme);border-color:var(--flamme)}
+  .fine{font-size:13px;color:var(--slate);margin-top:14px}
+  .receipt{display:none;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.08em;margin-top:20px;padding:16px 20px;border:1px solid var(--ink)}
+  .receipt.ok{display:block}
+  .receipt .dotline{color:var(--flamme)}
+
+  footer{border-top:1px solid var(--ink);padding:28px 0 48px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--slate);text-decoration:none}
+  footer a:hover{color:var(--flamme)}
+
+  @media (max-width:560px){ form{flex-direction:column} button{width:100%} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="wordmark">FORMA<span class="dot">.</span></span>
+    <span class="kicker">EST. SUMMER 2026</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker flamme">A CYCLING COACH WITH A MEMORY</p>
+      <h1 class="display">The plan bends.<br>The goal doesn't<span class="dot">.</span></h1>
+      <p class="lede">Your coach reads every ride, remembers every conversation, and connects what the numbers say to what your life is doing. Not a dashboard with a chatbot — a companion with a memory.</p>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="club">
+    <div class="wrap">
+      <p class="kicker">THE FOUNDING HUNDRED</p>
+      <div class="display big">100<span class="dot">.</span></div>
+      <h2>That's the club.</h2>
+      <p>One hundred founding members. A cycling coach with a memory, a plan that bends around your life, and a founder you can reply to. When the hundred places are gone, the doors close.</p>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="form-block" id="waitlist">
+    <div class="wrap">
+      <p class="kicker">THE WAITLIST</p>
+      <h2>Hold your place<span class="dot">.</span></h2>
+      <!-- Apps Script endpoint: replace SCRIPT_URL with your /exec web app URL -->
+      <form id="waitlist-form" action="SCRIPT_URL" method="POST">
+        <input type="email" name="email" required placeholder="you@youremail.com" aria-label="Email address">
+        <button type="submit">Join the hundred</button>
+      </form>
+      <p class="fine">One email when the doors open. Nothing else. No spam, ever.</p>
+      <div class="receipt" id="receipt">PLACE HELD <span class="dotline">·</span> WE'LL WRITE WHEN THE DOORS OPEN</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="kicker">FORMA<span style="color:var(--flamme)">.</span> · RIDEWITHFORMA.COM</span>
+    <span class="kicker"><a href="https://instagram.com/ridewithforma">@RIDEWITHFORMA</a></span>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('waitlist-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.textContent = 'HOLDING…'; btn.disabled = true;
+    try {
+      const body = new URLSearchParams(new FormData(form));
+      const res = await fetch(form.action, { method: 'POST', body });
+      const data = await res.json();
+      if (data.ok) {
+        form.style.display = 'none';
+        document.getElementById('receipt').classList.add('ok');
+      } else { throw new Error(); }
+    } catch {
+      btn.textContent = 'TRY AGAIN'; btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
