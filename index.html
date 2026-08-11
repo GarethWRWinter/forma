@@ -22,7 +22,7 @@
   .wrap{max-width:760px;margin:0 auto;padding:0 24px}
   .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
   .kicker.flamme{color:var(--flamme)}
-  .display{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .display{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:.98}
   .mono{font-family:'IBM Plex Mono',monospace}
 
   /* THE KITE — the flamme pennant full stop, tip on the baseline */
@@ -43,10 +43,11 @@
   .wordmark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
 
   .hero{position:relative;padding:120px 0 100px;background:#101012 url('/img/ventoux.jpg') center/cover}
-  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,12,.78) 0%,rgba(11,11,12,.44) 55%,rgba(11,11,12,.28) 100%)}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.32) 45%,rgba(11,11,12,.06) 78%,rgba(11,11,12,0) 100%)}
   .hero .wrap{position:relative}
   .hero h1{font-size:clamp(46px,8.4vw,84px);margin:22px 0 30px;color:#F0F0EC}
   .hero p.lede{font-size:20px;max-width:600px;color:rgba(240,240,236,.9)}
+  .hero .kicker.flamme{color:#F0F0EC}
   .hero .capline{position:absolute;right:0;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(240,240,236,.55)}
   .livechip{display:inline-flex;align-items:center;gap:10px}
   .livechip .d{width:8px;height:8px;border-radius:50%;background:var(--flamme)}
@@ -59,7 +60,7 @@
 
   .sect{padding:64px 0}
   .sect .num{font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:600;color:var(--flamme);line-height:1}
-  .sect h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(30px,4.6vw,40px);letter-spacing:-.02em;margin:14px 0 18px}
+  .sect h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(30px,4.6vw,40px);letter-spacing:-.02em;line-height:1.06;margin:14px 0 18px}
   .sect p{max-width:600px;color:#3C3C3A}
   .sect p+p{margin-top:14px}
   .vignette{margin-top:22px;border-left:3px solid var(--flamme);padding:16px 22px;background:var(--paper);max-width:600px}
@@ -83,7 +84,7 @@
   .club p{max-width:600px;color:#3C3C3A}
 
   .form-block{padding:64px 0 104px}
-  .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:36px;letter-spacing:-.02em;margin:16px 0 24px}
+  .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:36px;letter-spacing:-.02em;line-height:1.06;margin:16px 0 24px}
   form{display:flex;gap:0;max-width:600px;margin-top:8px}
   input[type=email]{flex:1;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:19px 20px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;outline:none;min-width:0}
   input[type=email]::placeholder{color:var(--slate)}
