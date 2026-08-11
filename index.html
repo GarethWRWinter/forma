@@ -42,13 +42,11 @@
   header .wrap{display:flex;justify-content:space-between;align-items:baseline}
   .wordmark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
 
-  .hero{position:relative;padding:120px 0 100px;background:#101012 url('/img/ventoux.jpg') center/cover}
-  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.32) 45%,rgba(11,11,12,.06) 78%,rgba(11,11,12,0) 100%)}
-  .hero .wrap{position:relative}
+  .hero{position:relative;padding:112px 0 96px;background:var(--carbon)}
+    .hero .wrap{position:relative}
   .hero h1{font-size:clamp(46px,8.4vw,84px);margin:22px 0 30px;color:#F0F0EC}
   .hero p.lede{font-size:20px;max-width:600px;color:rgba(240,240,236,.9)}
   .hero .kicker.flamme{color:#F0F0EC}
-  .hero .capline{position:absolute;right:0;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(240,240,236,.55)}
   .livechip{display:inline-flex;align-items:center;gap:10px}
   .livechip .d{width:8px;height:8px;border-radius:50%;background:var(--flamme)}
 
@@ -137,11 +135,13 @@
       <h1 class="display">The plan bends.<br>The goal holds.</h1>
       <p class="lede">The pros had an entire team finding their gains. Forma is that team, in your jersey pocket: a coach that remembers every ride and every conversation, and builds your season around the life you actually live.</p>
       <p style="margin-top:36px"><a class="cta" href="#waitlist">Join the founding hundred <span class="arrow">→</span></a></p>
-      <span class="capline">MONT VENTOUX · THE GIANT OF PROVENCE</span>
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"></div>
+  <section class="inkband">
+    <img src="/img/ventoux.jpg" alt="Mont Ventoux rendered as ink dispersion">
+    <div class="cap"><div class="wrap"><span>MONT VENTOUX</span><span>THE GIANT OF PROVENCE</span></div></div>
+  </section>
 
   <section class="sect reveal">
     <div class="wrap">
