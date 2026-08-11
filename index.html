@@ -105,6 +105,10 @@
   .photorow img{display:block;width:100%;height:230px;object-fit:cover;filter:contrast(1.02)}
   .photorow figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;margin-top:8px;line-height:1.5}
   @media (max-width:560px){ .photorow{grid-template-columns:1fr} .photorow img{height:260px} }
+  .founderrow{display:grid;grid-template-columns:minmax(0,640px) 250px;gap:44px;align-items:end;max-width:934px;margin-top:26px}
+  .founderrow img{display:block;width:100%;height:330px;object-fit:cover;object-position:50% 18%;filter:contrast(1.02)}
+  .founderrow figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;margin-top:8px;line-height:1.5}
+  @media (max-width:700px){ .founderrow{grid-template-columns:1fr} .founderrow figure{max-width:320px} }
   .faq dt{font-weight:700;font-size:18px;margin-top:30px}
   .faq dd{margin:8px 0 0;color:#3C3C3A;max-width:620px}
   .receipt{display:none;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.08em;margin-top:20px;padding:16px 20px;border:1px solid var(--ink)}
@@ -208,9 +212,17 @@
           <figcaption>The Hour Record · trackside with Sir Bradley Wiggins</figcaption>
         </figure>
       </div>
-      <p>Then I spent a decade inside Team Sky and British Cycling, and I finally saw what my grandfather and my father never had. Not the legs. They had the legs. The coaches, the numbers people, the psychologists: the system that turns an engine into results.</p>
-      <p>Forma is that system, finally in reach. I built it for the rider with the engine, the job and the family. Which is to say, I built it for us.</p>
-      <p class="sig">Gareth Winter</p>
+      <div class="founderrow">
+        <div>
+          <p>Then I spent a decade inside Team Sky and British Cycling, and I finally saw what my grandfather and my father never had. Not the legs. They had the legs. The coaches, the numbers people, the psychologists: the system that turns an engine into results.</p>
+          <p>Forma is that system, finally in reach. I built it for the rider with the engine, the job and the family. Which is to say, I built it for us.</p>
+          <p class="sig">Gareth Winter</p>
+        </div>
+        <figure>
+          <img src="/img/gareth-portrait.jpg" alt="Gareth Winter in riding kit, mountains behind" loading="lazy">
+          <figcaption>Gareth Winter · founder · first of the hundred</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
