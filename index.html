@@ -102,6 +102,10 @@
   .proofrow .item{max-width:250px}
   .proofrow .big{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;letter-spacing:.02em}
   .proofrow .lab{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;margin-top:6px}
+  .photorow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 6px;max-width:680px}
+  .photorow img{display:block;width:100%;height:230px;object-fit:cover;filter:contrast(1.02)}
+  .photorow figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;margin-top:8px;line-height:1.5}
+  @media (max-width:560px){ .photorow{grid-template-columns:1fr} .photorow img{height:260px} }
   .faq dt{font-weight:700;font-size:18px;margin-top:30px}
   .faq dd{margin:8px 0 0;color:#3C3C3A;max-width:620px}
   .receipt{display:none;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.08em;margin-top:20px;padding:16px 20px;border:1px solid var(--ink)}
@@ -189,6 +193,20 @@
       <p class="kicker">WHY FORMA EXISTS</p>
       <h2>Talent was never the missing ingredient in my family. The system was.</h2>
       <p>My grandfather raced time trials in post-war Britain, training by feel between RAF shifts, riding 88 miles each way on weekends to see my grandmother. My dad built wheels, led the Surrey League as a young rider, then three boys arrived and the racing stopped. I grew up riding to school on the back of his tandem.</p>
+      <div class="photorow">
+        <figure>
+          <img src="/img/martyn-track.jpg" alt="Martyn Winter racing on the track, black and white photograph" loading="lazy">
+          <figcaption>Martyn Winter · the first generation · trained by feel</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/martyn-corner.jpg" alt="Martyn Winter cornering at speed in later years" loading="lazy">
+          <figcaption>Martyn · still racing · the engine never left</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/hour-record.jpg" alt="Gareth Winter trackside with Sir Bradley Wiggins at the Hour Record" loading="lazy">
+          <figcaption>The Hour Record · trackside with Sir Bradley Wiggins</figcaption>
+        </figure>
+      </div>
       <p>Then I spent a decade inside Team Sky and British Cycling, and I finally saw what my grandfather and my father never had. Not the legs. They had the legs. The coaches, the numbers people, the psychologists: the system that turns an engine into results.</p>
       <p>Forma is that system, finally in reach. I built it for the rider with the engine, the job and the family. Which is to say, I built it for us.</p>
       <p class="sig">Gareth Winter</p>
