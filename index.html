@@ -40,6 +40,10 @@
 
   header{padding:28px 0;border-bottom:1px solid var(--ink)}
   header .wrap{display:flex;justify-content:space-between;align-items:baseline}
+  .headright{display:flex;gap:28px;align-items:baseline}
+  .joinlink{color:var(--flamme);text-decoration:none}
+  .joinlink:hover{color:var(--ink)}
+  @media (max-width:560px){ .headright .est{display:none} }
   .wordmark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
 
   .hero{position:relative;padding:112px 0 96px;background:var(--carbon)}
@@ -128,7 +132,7 @@
 <header>
   <div class="wrap">
     <span class="wordmark">FORMA<span class="dot"></span></span>
-    <span class="kicker">EST. SUMMER 2026</span>
+    <span class="headright"><span class="kicker est">EST. SUMMER 2026</span><a class="kicker joinlink" href="#waitlist">Join the hundred →</a></span>
   </div>
 </header>
 
