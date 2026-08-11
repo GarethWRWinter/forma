@@ -42,9 +42,12 @@
   header .wrap{display:flex;justify-content:space-between;align-items:baseline}
   .wordmark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
 
-  .hero{padding:104px 0 88px}
-  .hero h1{font-size:clamp(46px,8.4vw,84px);margin:22px 0 30px}
-  .hero p.lede{font-size:20px;max-width:600px;color:#3C3C3A}
+  .hero{position:relative;padding:120px 0 100px;background:#101012 url('/img/ventoux.jpg') center/cover}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,12,.74) 0%,rgba(11,11,12,.30) 55%,rgba(11,11,12,.16) 100%)}
+  .hero .wrap{position:relative}
+  .hero h1{font-size:clamp(46px,8.4vw,84px);margin:22px 0 30px;color:#F0F0EC}
+  .hero p.lede{font-size:20px;max-width:600px;color:rgba(240,240,236,.9)}
+  .hero .capline{position:absolute;right:0;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(240,240,236,.55)}
   .livechip{display:inline-flex;align-items:center;gap:10px}
   .livechip .d{width:8px;height:8px;border-radius:50%;background:var(--flamme)}
 
@@ -126,9 +129,10 @@
   <section class="hero">
     <div class="wrap">
       <p class="kicker flamme livechip"><span class="d pulse"></span>A CYCLING COACH WITH A MEMORY</p>
-      <h1 class="display">The plan bends.<br>The goal <span style="white-space:nowrap">holds<span class="dot"></span></span></h1>
+      <h1 class="display">The plan bends.<br>The goal holds.</h1>
       <p class="lede">The pros had an entire team finding their gains. Forma is that team, in your jersey pocket: a coach that remembers every ride and every conversation, and builds your season around the life you actually live.</p>
       <p style="margin-top:36px"><a class="cta" href="#waitlist">Join the founding hundred <span class="arrow">→</span></a></p>
+      <span class="capline">MONT VENTOUX · THE GIANT OF PROVENCE</span>
     </div>
   </section>
 
@@ -220,7 +224,7 @@
   <section class="club reveal">
     <div class="wrap">
       <p class="kicker">THE FOUNDING HUNDRED</p>
-      <div class="display big">100<span class="dot"></span></div>
+      <div class="display big">100.</div>
       <h2>That's the whole club.</h2>
       <p>One hundred founding members get the coach, the memory, the pre-ride briefings, the plan that rebuilds itself around your life, and a founder who reads your first month personally and writes back.</p>
       <p>A human coach runs £150 to £250 a month at typical UK rates, before the bike fit and the testing. Forma is £19.99 a month. The founding hundred ride at £14.99, locked for as long as they stay.</p>
@@ -248,12 +252,15 @@
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"></div>
+  <section class="inkband reveal">
+    <img src="/img/tourmalet.jpg" alt="Col du Tourmalet rendered as ink dispersion" loading="lazy">
+    <div class="cap"><div class="wrap"><span>COL DU TOURMALET</span><span>THE DOORS OPEN SOON</span></div></div>
+  </section>
 
   <section class="form-block reveal" id="waitlist">
     <div class="wrap">
       <p class="kicker">THE WAITLIST</p>
-      <h2>Hold your place<span class="dot"></span></h2>
+      <h2>Hold your place.</h2>
       <p style="max-width:600px">Join and I'll send you one letter a week until the doors open: the fuelling maths, the free marginal gains, the real numbers from my own testing. You'll be faster by launch day without paying a penny. That's the deal.</p>
       <form id="waitlist-form" action="https://gareth-coaching-api-production.up.railway.app/api/v1/waitlist" method="POST">
         <input type="email" name="email" required placeholder="you@youremail.com" aria-label="Email address">
