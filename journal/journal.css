@@ -102,3 +102,13 @@ figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.
 .entry .thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--rule)}
 .entry .txt{min-width:0}
 @media (max-width:620px){ .entry{grid-template-columns:1fr} .entry .thumb{aspect-ratio:16/9} }
+
+/* Video: breaks out past the 720px reading column to a cinematic 960,
+   without the 100vw scrollbar trap (min() against the padded viewport). */
+.vid{margin:44px 0;width:min(960px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%)}
+/* Absolute inside a ratio box: the iframe's intrinsic height would
+   otherwise win over aspect-ratio and squash the player. */
+.vid .frame{position:relative;aspect-ratio:16/9;background:var(--carbon)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vid figcaption{max-width:720px;margin-left:auto;margin-right:auto;padding:0 24px}
+@media (max-width:760px){ .vid figcaption{padding:0} }
