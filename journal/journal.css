@@ -72,8 +72,9 @@ td.num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
 
 /* Close + CTA */
 .endnote{margin-top:48px;padding-top:26px;border-top:2px solid var(--ink)}
-.cta{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 30px;background:var(--flamme);color:#fff;text-decoration:none;border-radius:2px;margin-top:18px}
-.cta:hover{background:#D93400}
+/* Must out-specify `.body a`, or the label renders flamme on flamme. */
+.cta,.body a.cta{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 30px;background:var(--flamme);color:#fff;text-decoration:none;border-radius:2px;margin-top:18px}
+.cta:hover,.body a.cta:hover{background:#D93400;color:#fff}
 .backlink{display:inline-block;margin:40px 0 0;text-decoration:none}
 .backlink:hover{color:var(--flamme)}
 
