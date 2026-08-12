@@ -4,7 +4,9 @@
   --rule:#DCDCD6;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* clip, not hidden: full-bleed bands can overhang without creating a
+   scroll container (which would break any sticky positioning). */
+html{scroll-behavior:smooth;overflow-x:clip}
 body{background:var(--chalk);color:var(--ink);font-family:'Inter Tight',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
@@ -54,7 +56,8 @@ article h1{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;le
 .stat{margin:34px 0;padding:22px 24px;background:var(--carbon);color:#F0F0EC}
 .stat .n{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(34px,6vw,46px);line-height:1;color:#fff}
 .stat .lab{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--titanium);margin-top:10px}
-.stat .note{margin-top:12px;font-size:15px;color:#C9C9C4;max-width:520px}
+/* Reset the standalone .note box styling: inside carbon it is plain text. */
+.stat .note{margin:12px 0 0;padding:0;border:0;background:none;font-size:15px;line-height:1.5;color:#C9C9C4;max-width:520px}
 
 .pull{margin:36px 0;padding-left:20px;border-left:3px solid var(--flamme)}
 .pull p{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:650;font-size:clamp(20px,3.2vw,25px);line-height:1.22;letter-spacing:-.01em;margin:0}
@@ -78,3 +81,23 @@ footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--ink)}
 footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--flamme)}
+
+/* Photography */
+figure{margin:38px 0}
+figure img{display:block;width:100%;height:auto;background:var(--rule)}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-top:9px;line-height:1.55}
+.lead{margin:0 0 6px}
+.lead img{aspect-ratio:3/2;object-fit:cover}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:38px 0}
+.duo figure{margin:0}
+.duo img{aspect-ratio:4/3;object-fit:cover}
+@media (max-width:620px){ .duo{grid-template-columns:1fr} }
+/* Full-bleed band for the wide panoramics */
+.band{margin:44px 0;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
+.band img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover}
+.band figcaption{max-width:720px;margin:9px auto 0;padding:0 24px}
+/* Index thumbnails */
+.entry{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:start}
+.entry .thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--rule)}
+.entry .txt{min-width:0}
+@media (max-width:620px){ .entry{grid-template-columns:1fr} .entry .thumb{aspect-ratio:16/9} }
