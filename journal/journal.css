@@ -16,12 +16,30 @@ a{color:inherit}
 /* Header, matched to the landing page */
 header{padding:28px 0;border-bottom:1px solid var(--ink);background:var(--chalk)}
 header .wrap{max-width:760px;display:flex;justify-content:space-between;align-items:baseline;gap:20px}
-header .lockup{height:22px;width:auto;display:block}
+header .lockup{height:22px;width:auto;display:block;flex:none}
 .headright{display:flex;gap:24px;align-items:baseline}
 .headright a{text-decoration:none}
-.riderlink{color:var(--slate)} .riderlink:hover{color:var(--ink)}
-.joinlink{color:var(--flamme)} .joinlink:hover{color:var(--ink)}
-@media (max-width:600px){ .headright .est{display:none} }
+.riderlink{color:var(--slate);white-space:nowrap} .riderlink:hover{color:var(--ink)}
+.joinlink{color:var(--flamme);white-space:nowrap} .joinlink:hover{color:var(--ink)}
+/* Below 640px the lockup plus three header items overflow the viewport, and
+   html{overflow-x:clip} above means that overflow is clipped, not scrollable.
+   So the header sheds: the index sheds its EST. stamp, articles shed the
+   Journal link (they carry "All journal entries" at the foot), and the CTA
+   shortens. The lockup never shrinks: it is the brand. */
+@media (max-width:640px){
+  header .wrap{gap:14px}
+  .headright{gap:18px}
+  .headright .est{display:none}
+  .headright .journallink{display:none}
+  .joinlink .joinlong{display:none}
+}
+@media (min-width:641px){ .joinlink .joinshort{display:none} }
+/* Under ~400px even the shortened row loses to the lockup, so the header
+   wraps into two tidy rows rather than shedding the login link. */
+@media (max-width:400px){
+  header .wrap{flex-wrap:wrap}
+  .headright{width:100%;justify-content:flex-start}
+}
 
 /* Index masthead */
 .masthead{padding:72px 0 40px;border-bottom:1px solid var(--rule)}
