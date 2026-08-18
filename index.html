@@ -126,13 +126,20 @@
 
   .form-block{padding:64px 0 104px}
   .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:36px;letter-spacing:-.02em;line-height:1.06;margin:16px 0 24px}
-  form{display:flex;gap:0;max-width:600px;margin-top:8px}
-  input[type=email]{flex:1;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:19px 20px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;outline:none;min-width:0}
-  input[type=email]::placeholder{color:var(--slate)}
-  input[type=email]:focus{border-color:var(--flamme)}
+  form,.sharerow{display:flex;gap:0;max-width:600px;margin-top:8px}
+  #waitlist-form input[name=name]{flex:1 1 140px}
+  #waitlist-form input[name=email]{flex:2 1 190px}
+  @media (max-width:640px){
+    #waitlist-form{flex-direction:column}
+    #waitlist-form input,#waitlist-form button{width:100%}
+    #waitlist-form input+input,#waitlist-form button{margin-top:-1px}
+  }
+  input[type=email],input[type=text]{flex:1;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:19px 20px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;outline:none;min-width:0}
+  input[type=email]::placeholder,input[type=text]::placeholder{color:var(--slate)}
+  input[type=email]:focus,input[type=text]:focus{border-color:var(--flamme)}
   button{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:19px 30px;background:var(--flamme);color:#fff;border:1px solid var(--flamme);cursor:pointer;white-space:nowrap}
   button:hover{background:#D93400;border-color:#D93400}
-  .fine{font-size:13px;color:var(--slate);margin-top:14px}
+  .fine{font-size:13px;color:var(--slate);margin-top:14px;text-wrap:pretty}
   .story p{max-width:640px}
   .story strong{font-weight:600;color:var(--ink)}
   .story .sig{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:20px;letter-spacing:.01em;color:var(--ink);margin-top:22px}
@@ -160,13 +167,27 @@
   .receipt{display:none;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.08em;margin-top:20px;padding:16px 20px;border:1px solid var(--ink)}
   .receipt.ok{display:block}
   .receipt .dotline{color:var(--flamme)}
+  .receipt .n,.queue .n{color:var(--flamme)}
+  /* Hidden until the script has a count worth showing, so a small or missing
+     number never lands on the page. p.queue, not .queue: the club block
+     colours its own paragraphs and would otherwise win. */
+  p.queue{display:none;margin:18px 0;color:var(--slate)}
+  p.queue.on{display:block}
+  .held{display:none;margin-top:26px}
+  .held.ok{display:block}
+  .askq{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:20px;letter-spacing:-.01em;line-height:1.2;margin-top:6px;text-wrap:balance}
+  .share{margin-top:30px;padding-top:26px;border-top:1px solid var(--rule,#DCDCD6)}
+  input.shareurl{font-size:13px}
+  /* Skipping has to be as easy as answering, or the question isn't optional. */
+  .linkbtn{font:inherit;letter-spacing:inherit;text-transform:none;padding:0;background:none;border:none;color:var(--slate);text-decoration:underline;cursor:pointer}
+  .linkbtn:hover{background:none;color:var(--flamme)}
 
   footer{border-top:1px solid var(--ink);padding:28px 0 48px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   footer a{color:var(--slate);text-decoration:none}
   footer a:hover{color:var(--flamme)}
 
-  @media (max-width:560px){ form{flex-direction:column} button{width:100%} .carbon{flex-wrap:wrap;gap:18px} }
+  @media (max-width:560px){ form,.sharerow{flex-direction:column} button{width:100%} .linkbtn{width:auto} .carbon{flex-wrap:wrap;gap:18px} }
 </style>
 </head>
 <body>
@@ -306,6 +327,7 @@
       <p class="kicker">THE FOUNDING HUNDRED</p>
       <div class="display big">100.</div>
       <h2>That's the whole club.</h2>
+      <p class="kicker queue"></p>
       <p>One hundred founding members get the coach, the memory, the pre-ride briefings, the plan that rebuilds itself around your life, and a founder who reads your first month personally and writes back.</p>
       <p>A human coach runs £150 to £250 a month at typical UK rates, before the bike fit and the testing. Forma is £19.99 a month. The founding hundred ride at £14.99, locked for as long as they stay.</p>
       <p>Why only a hundred? Because I read every founding rider's first month myself, and a hundred is the honest limit of that promise. When the places are gone, the doors close.</p>
@@ -372,12 +394,33 @@
       <p class="kicker">THE WAITLIST</p>
       <h2>Hold your place.</h2>
       <p style="max-width:600px">The doors open on 15 September. Join now and I'll send you one letter a week until they do: the fuelling maths, the free marginal gains, the real numbers from my own testing. You'll be faster by launch day without paying a penny. That's the deal.</p>
+      <p class="kicker queue"></p>
       <form id="waitlist-form" action="https://gareth-coaching-api-production.up.railway.app/api/v1/waitlist" method="POST">
-        <input type="email" name="email" required placeholder="you@youremail.com" aria-label="Email address">
+        <input type="text" name="name" required autocomplete="given-name" placeholder="First name" aria-label="First name" maxlength="80">
+        <input type="email" name="email" required autocomplete="email" placeholder="you@youremail.com" aria-label="Email address">
         <button type="submit">Join the hundred</button>
       </form>
+      <div class="receipt" id="receipt" role="status">PLACE HELD <span class="dotline">·</span> FIRST LETTER ON ITS WAY</div>
+      <div class="held" id="held">
+        <div id="ask">
+          <p class="kicker">ONE QUESTION</p>
+          <p class="askq">What ride are you aiming at?</p>
+          <form id="goal-form">
+            <input type="text" id="goal" maxlength="280" placeholder="Marmotte, July" aria-label="The ride you are aiming at">
+            <button type="submit">Tell me</button>
+          </form>
+          <p class="fine">Optional, and answering just means I turn up prepared. <button type="button" class="linkbtn" id="goal-skip">Skip this</button></p>
+        </div>
+        <div class="share" id="share">
+          <p class="kicker">YOUR LINK</p>
+          <div class="sharerow">
+            <input type="text" class="shareurl" id="share-url" readonly aria-label="Your share link">
+            <button type="button" id="share-copy">Copy</button>
+          </div>
+          <p class="fine">Every rider who joins on this link moves you up the queue.</p>
+        </div>
+      </div>
       <p class="fine">One letter a week until 15 September, and a note the day the doors open. Unsubscribe in a click. No spam, ever.</p>
-      <div class="receipt" id="receipt">PLACE HELD <span class="dotline">·</span> FIRST LETTER ON ITS WAY</div>
     </div>
   </section>
 </main>
@@ -392,24 +435,117 @@
 <script>
   // Waitlist submit → receipt
   const form = document.getElementById('waitlist-form');
+  // Join lives on the form so the page still works without JS. Stats and goal
+  // hang off the same root, so there is only ever one host to change.
+  const API = form.action.replace(/\/waitlist$/, '');
+  // A referral only counts if it survives the trip, so it is read once on load
+  // and carried into the join body from there.
+  const ref = new URLSearchParams(location.search).get('ref');
+  // Below this the count reads as an empty room and costs us more than silence.
+  const QUEUE_MIN = 40;
+  let places = 100;
+  let token = null;
+
+  const queue = document.querySelectorAll('.queue');
+  function showQueue(total) {
+    const n = Number(total);
+    if (!(n >= QUEUE_MIN)) return;
+    // Each half holds together so the line never drops a lone word on mobile.
+    const line = '<span class="nb"><span class="n">' + n.toLocaleString('en-GB') +
+      '</span> riders waiting.</span> <span class="nb">' + places + ' places.</span>';
+    for (const el of queue) { el.innerHTML = line; el.classList.add('on'); }
+  }
+
+  fetch(API + '/waitlist/stats')
+    .then((r) => r.json())
+    .then((d) => { if (d.places > 0) places = Number(d.places); showQueue(d.total); })
+    .catch(() => {}); // a broken count is worse than no count
+
+  const ask = document.getElementById('ask');
+  const shareUrl = document.getElementById('share-url');
+  const copyBtn = document.getElementById('share-copy');
+  function thank(line) { ask.innerHTML = '<p class="fine">' + line + '</p>'; }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button');
     btn.textContent = 'HOLDING…'; btn.disabled = true;
     try {
-      const email = new FormData(form).get('email');
+      const fd = new FormData(form);
+      const email = fd.get('email');
+      const name = (fd.get('name') || '').toString().trim();
       const res = await fetch(form.action, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, name: name || null, ref: ref || null }),
       });
       const data = await res.json();
       if (data.status === 'held') {
         form.style.display = 'none';
-        document.getElementById('receipt').classList.add('ok');
+        held(data);
       } else { throw new Error(); }
     } catch {
       btn.textContent = 'TRY AGAIN'; btn.disabled = false;
+    }
+  });
+
+  // The number is the whole point of a queue, so it leads the receipt.
+  function held(data) {
+    const receipt = document.getElementById('receipt');
+    const pos = Number(data.position);
+    if (pos > 0) {
+      receipt.innerHTML = '<span class="nb">PLACE HELD <span class="dotline">·</span></span>' +
+        ' <span class="nb">YOU ARE NUMBER <span class="n">' + pos + '</span></span>';
+    }
+    receipt.classList.add('ok');
+    showQueue(data.total); // they are in it now, so the count says so
+    token = data.token;
+    if (data.share_url) {
+      // A phone can't show the whole URL and the code is the part that matters,
+      // so the scheme goes. What they can read is exactly what gets copied.
+      shareUrl.value = data.share_url.replace(/^https?:\/\//, '');
+    } else {
+      document.getElementById('share').style.display = 'none';
+    }
+    // No token, no way to file an answer, so don't ask for one.
+    if (!token) { ask.style.display = 'none'; }
+    document.getElementById('held').classList.add('ok');
+  }
+
+  document.getElementById('goal-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const goal = document.getElementById('goal').value.trim();
+    if (!goal) { thank("No problem. The first letter is on its way."); return; }
+    thank("Noted. I'll have that in front of me when your place comes up.");
+    // The answer is a bonus, not a gate, so a failed save never lands on them.
+    try {
+      await fetch(API + '/waitlist/goal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, goal }),
+      });
+    } catch {}
+  });
+
+  document.getElementById('goal-skip').addEventListener('click', () => {
+    thank("No problem. The first letter is on its way.");
+  });
+
+  let copyTimer;
+  function flash(label) {
+    copyBtn.textContent = label;
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => { copyBtn.textContent = 'COPY'; }, 2200);
+  }
+  shareUrl.addEventListener('focus', () => shareUrl.select());
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl.value);
+      flash('COPIED');
+    } catch {
+      // Clipboard access can be refused outright; selecting it is the honest fallback.
+      shareUrl.select();
+      flash('COPY IT');
     }
   });
 
