@@ -51,11 +51,11 @@
   section p+p{margin-top:14px}
   .rule{border:none;border-top:2px solid var(--ink)}
 
-  .story .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;max-width:640px}
+  .story .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
   .story figure{margin:0}
   .story img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--rule)}
   .story figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-top:8px;line-height:1.5}
-  @media (max-width:560px){ .story .grid{grid-template-columns:1fr} .story img{aspect-ratio:3/2} }
+  @media (max-width:640px){ .story .grid{grid-template-columns:1fr} .story img{aspect-ratio:4/3} }
   .cv{margin-top:26px;max-width:600px}
   .cv .row{display:flex;gap:18px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
   .cv .when{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--slate);flex:none;width:104px}
@@ -125,12 +125,16 @@
       <p>Since then I've been creative director at Veloforte, the UK's fastest-growing sports nutrition brand, and creative director then head of content at Mindvalley, the world's largest personal growth platform, making campaigns and films watched by millions. This year I founded Forma, an AI cycling coach, because the system that builds champions should fit in a jersey pocket.</p>
       <div class="grid">
         <figure>
+          <img src="/img/martyn-track.jpg" alt="Gareth's grandfather racing on the track in post-war Britain">
+          <figcaption>Where it started: my grandfather, post-war Britain</figcaption>
+        </figure>
+        <figure>
           <img src="/img/hour-record.jpg" alt="Trackside at Bradley Wiggins's Hour Record" style="object-position:center">
           <figcaption>Trackside, the Wiggins Hour Record</figcaption>
         </figure>
         <figure>
-          <img src="/img/martyn-track.jpg" alt="Gareth's grandfather racing on the track in post-war Britain">
-          <figcaption>Where it started: my grandfather, post-war Britain</figcaption>
+          <img src="/img/cav-jersey.webp" alt="Mark Cavendish's signed world champion's Team Sky jersey, in Gareth's archive of signed kit">
+          <figcaption>From the archive: Cavendish's signed world champion's jersey</figcaption>
         </figure>
       </div>
     </div>
