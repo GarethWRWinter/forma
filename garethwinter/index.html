@@ -47,7 +47,8 @@
 
   section{padding:64px 0}
   section h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(28px,4.4vw,38px);letter-spacing:-.02em;line-height:1.06;margin:14px 0 18px}
-  section p{max-width:600px;color:#3C3C3A}
+  section p{max-width:600px;color:#3C3C3A;text-wrap:pretty}
+  figcaption,.cell .l,.reelstats .l,.rates .item span,.rates .fine{text-wrap:pretty}
   section p+p{margin-top:14px}
   .rule{border:none;border-top:2px solid var(--ink)}
 
@@ -67,6 +68,17 @@
   .make h3{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:18px;margin-bottom:8px}
   .make p{font-size:14.5px;line-height:1.55;color:#4A4A47}
   @media (max-width:560px){ .makes{grid-template-columns:1fr} }
+
+  .reelproof{display:grid;grid-template-columns:280px 1fr;gap:26px;margin-top:30px;max-width:640px;align-items:center}
+  .reelproof figure{margin:0}
+  .reelproof img{width:100%;height:auto;display:block;border-radius:4px}
+  .reelstats{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .reelstats>div{background:var(--paper);padding:16px 18px}
+  .reelstats .n{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;line-height:1;letter-spacing:-.02em}
+  .reelstats .l{margin-top:7px;font-size:13px;color:var(--slate);line-height:1.45}
+  .reelstats a{color:inherit;text-underline-offset:3px}
+  .reelstats a:hover{color:var(--flamme)}
+  @media (max-width:560px){ .reelproof{grid-template-columns:1fr} .reelproof figure{max-width:300px} }
 
   .rates{background:var(--carbon);color:#F0F0EC}
   .rates h2{color:#F0F0EC}
@@ -126,7 +138,7 @@
       <div class="grid">
         <figure>
           <img src="/img/martyn-track.jpg" alt="Gareth's grandfather racing on the track in post-war Britain">
-          <figcaption>Where it started: my grandfather, post-war Britain</figcaption>
+          <figcaption>Where it started: my grandfather, <span class="nb">post-war Britain</span></figcaption>
         </figure>
         <figure>
           <img src="/img/hour-record.jpg" alt="Trackside at Bradley Wiggins's Hour Record" style="object-position:22% center">
@@ -153,10 +165,17 @@
         <div class="make"><h3>Long-form writing</h3><p>The Roadbook journal: obsessive, honest long reads on training, marginal gains and the head. The writing brands borrow their tone from.</p></div>
         <div class="make"><h3>Product integration</h3><p>I directed campaigns for a nutrition brand and built a training app. I know how to put a product inside a story so it belongs there, because placing products in stories was my job.</p></div>
       </div>
-      <figure style="margin:28px 0 0;max-width:300px">
-        <img src="/img/gareth-creator.webp" alt="Gareth talking to camera in kit, product in hand" style="width:100%;height:auto;display:block;border-radius:2px" loading="lazy">
-        <figcaption class="kicker" style="margin-top:9px;font-size:10px">The format brands book most: straight to lens, product in hand</figcaption>
-      </figure>
+      <div class="reelproof">
+        <figure>
+          <img src="/img/reel-pogacar.webp" alt="Instagram reel tile: the Pogačar weight film at 1.2 million plays" loading="lazy">
+          <figcaption class="kicker" style="margin-top:9px;font-size:10px">Instagram's counter, not mine: 1,208,466 plays</figcaption>
+        </figure>
+        <div class="reelstats">
+          <div><p class="n">1.2m</p><p class="l">Plays on one film, July 2026: the Pogačar weight reel, straight to lens</p></div>
+          <div><p class="n">94%</p><p class="l">Of those viewers weren't already followers. The work found its own audience</p></div>
+          <div><p class="n">16.1k</p><p class="l">Followers at <a href="https://www.instagram.com/garethwinter/">@garethwinter</a>, 861 posts deep</p></div>
+        </div>
+      </div>
       <p style="margin-top:26px">This autumn I'm riding a documented 54-day build to beat my own Sa Calobra PB, daily sessions indoors and out, which is exactly the kind of living storyline a campaign can sit inside.</p>
     </div>
   </section>
@@ -167,13 +186,14 @@
       <h2>The rate card.</h2>
       <p>Straightforward pricing for organic content on my channels. Everything includes concept, shoot, edit and copy, because I don't hand any of those off.</p>
       <div class="card">
-        <div class="row"><div class="item"><b>Single Reel</b><span>Concept to posted cut, one round of amends, story amplification on the day</span></div><span class="price">£450</span></div>
-        <div class="row"><div class="item"><b>Reel + Stories package</b><span>One reel plus a three-frame story sequence, link sticker included</span></div><span class="price">£650</span></div>
-        <div class="row"><div class="item"><b>Campaign bundle</b><span>Three reels plus stories across a campaign window, one narrative arc</span></div><span class="price">£1,500</span></div>
-        <div class="row"><div class="item"><b>Content only</b><span>Assets for your channels, no posting on mine, 12-month usage</span></div><span class="price">£350<small>/asset</small></span></div>
+        <div class="row"><div class="item"><b>Single Reel</b><span>Concept to posted cut, one round of amends, story amplification on the day</span></div><span class="price">£350</span></div>
+        <div class="row"><div class="item"><b>Reel + Stories package</b><span>One reel plus a three-frame story sequence, link sticker included</span></div><span class="price">£500</span></div>
+        <div class="row"><div class="item"><b>Campaign bundle</b><span>Three reels plus stories across a campaign window, one narrative arc</span></div><span class="price">£1,000</span></div>
+        <div class="row"><div class="item"><b>Content only</b><span>Assets for your channels, no posting on mine. Organic use is yours forever; paid use is licensed for 12 months</span></div><span class="price">£350<small>/asset</small></span></div>
         <div class="row"><div class="item"><b>Ambassadorship</b><span>Season-long partnership, product development input included</span></div><span class="price">Let's talk</span></div>
       </div>
-      <p class="fine">Rates cover organic usage on my channels for 12 months. Whitelisting and paid amplification +30%. Category exclusivity by conversation. UK based, fluent in shooting solo or with your crew.</p>
+      <p style="margin-top:24px">If the brief and the numbers don't quite meet, say so. Budgets are real and every campaign has its own shape, so tell me what you're working towards and what you've got to work with, and we'll find the version that fits: fewer assets, a different channel mix, a longer licence. The rate protects the work; the scope is where I'm flexible.</p>
+      <p class="fine">On my channels posts stay live for good; whitelisting and paid amplification of them is +30% for a 12-month licence. Category exclusivity by conversation. UK based, fluent in shooting solo or with your crew.</p>
     </div>
   </section>
 
@@ -181,7 +201,7 @@
     <div class="wrap">
       <p class="kicker">WORK WITH ME</p>
       <h2>One email starts it.</h2>
-      <p>Tell me the brand, the window and the shape of the idea, and I'll come back within a day with an honest read on whether I'm the right rider for it, because the work is only good when the fit is real.</p>
+      <p>Tell me the brand, the window and what a win looks like for you, and I'll come back within a day with an honest read on whether I'm the right rider for it, because the work is only good when the fit is real.</p>
       <p style="margin-top:28px"><a class="cta" href="mailto:gareth@ridewithforma.com?subject=Collaboration">gareth@ridewithforma.com</a></p>
     </div>
   </section>
