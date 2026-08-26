@@ -111,6 +111,8 @@ figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.
 .duo figure{margin:0}
 .duo img{aspect-ratio:4/3;object-fit:cover}
 @media (max-width:620px){ .duo{grid-template-columns:1fr} }
+/* charts keep their true proportions; 4/3 cover is for photography */
+.duo.data img{aspect-ratio:auto;object-fit:initial}
 /* Full-bleed band for the wide panoramics */
 .band{margin:44px 0;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
 .band img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover}
