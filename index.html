@@ -164,6 +164,10 @@
   .inkband .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 0;background:linear-gradient(to top,rgba(11,11,12,.55),transparent)}
   .inkband .cap .wrap{display:flex;justify-content:space-between;align-items:baseline}
   .inkband .cap span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#F0F0EC}
+  /* The founder band is a photograph, not ink: taller so the rider and the
+     switchbacks above him both fit, centred so a phone's square crop keeps him. */
+  .founderband img{height:clamp(380px,46vw,640px);object-position:50% 35%}
+  @media (max-width:640px){ .founderband .cap .wrap{flex-direction:column;gap:4px} }
   .proofrow{display:flex;flex-wrap:wrap;gap:34px;margin-top:26px}
   .proofrow .item{max-width:250px}
   .proofrow .big{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;letter-spacing:.02em}
@@ -227,9 +231,9 @@
     </div>
   </section>
 
-  <section class="inkband">
-    <img src="/img/ventoux.jpg" alt="Mont Ventoux rendered as ink dispersion" loading="lazy" decoding="async">
-    <div class="cap"><div class="wrap"><span>MONT VENTOUX</span><span>THE GIANT OF PROVENCE</span></div></div>
+  <section class="inkband founderband">
+    <img src="/img/founder-sa-calobra.webp" alt="Gareth Winter, Forma's founder, climbing Sa Calobra in Mallorca with the switchbacks below" fetchpriority="high" decoding="async" width="2200" height="1265">
+    <div class="cap"><div class="wrap"><span>GARETH WINTER &middot; FOUNDER &middot; SA CALOBRA</span><span>PHOTO: MALLORCA BIKE FOTOS</span></div></div>
   </section>
 
   <section class="sect reveal">
