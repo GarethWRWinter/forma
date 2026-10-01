@@ -167,7 +167,7 @@
   /* The founder band is a photograph, not ink: taller so the rider and the
      switchbacks above him both fit, centred so a phone's square crop keeps him. */
   .founderband img{height:clamp(380px,46vw,640px);object-position:50% 35%}
-  @media (max-width:640px){ .founderband .cap .wrap{flex-direction:column;gap:4px} }
+  @media (max-width:640px){ .founderband .cap .wrap{flex-direction:column;gap:4px} .founderband .pbsep{display:none} .founderband .cap span .nb{display:block} }
   .proofrow{display:flex;flex-wrap:wrap;gap:34px;margin-top:26px}
   .proofrow .item{max-width:250px}
   .proofrow .big{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;letter-spacing:.02em}
@@ -233,7 +233,7 @@
 
   <section class="inkband founderband">
     <img src="/img/founder-sa-calobra.webp" alt="Gareth Winter, Forma's founder, climbing Sa Calobra in Mallorca with the switchbacks below" fetchpriority="high" decoding="async" width="2200" height="1265">
-    <div class="cap"><div class="wrap"><span>GARETH WINTER &middot; FOUNDER &middot; SA CALOBRA</span><span>PHOTO: MALLORCA BIKE FOTOS</span></div></div>
+    <div class="cap"><div class="wrap"><span>GARETH WINTER &middot; FOUNDER <span class="pbsep">&middot; </span><span class="nb">SA CALOBRA PB 29:53</span></span><span>PHOTO: MALLORCA BIKE FOTOS</span></div></div>
   </section>
 
   <section class="sect reveal">
