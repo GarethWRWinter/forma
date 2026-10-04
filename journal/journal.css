@@ -100,6 +100,11 @@ footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--ink)}
 footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--flamme)}
+/* The trading disclosure the law asks for: present, legible, and quiet. */
+footer .legal{flex-basis:100%;font-size:10px;letter-spacing:.14em;line-height:1.7;text-wrap:balance}
+/* Index titles and body copy never leave one word on its own line. */
+.entry h2{text-wrap:balance}
+.standfirst,.entry p,.body p{text-wrap:pretty}
 
 /* Photography */
 figure{margin:38px 0}
@@ -119,7 +124,7 @@ figcaption{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.
 .band figcaption{max-width:720px;margin:9px auto 0;padding:0 24px}
 /* Index thumbnails */
 .entry{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:start}
-.entry .thumb{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--rule)}
+.entry .thumb{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--rule)}
 .entry .txt{min-width:0}
 @media (max-width:620px){ .entry{grid-template-columns:1fr} .entry .thumb{aspect-ratio:16/9} }
 
