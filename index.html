@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORMA · A coach for the head, not just the engine</title>
+<title>FORMA · The AI cycling coach that remembers what you tell it</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Your legs rarely quit before your head does. Forma coaches both, around the life you actually live. Invite only: a hundred founding places at £14.99 a month.">
-<meta property="og:title" content="FORMA · A coach for the head, not just the engine">
-<meta property="og:description" content="Not a plan you adapt to. A coach that adapts to you, and trains the part that quits first. Invite only: a hundred founding places at £14.99 a month.">
+<meta name="description" content="An AI cycling coach that remembers every ride and every conversation, and coaches your head as well as your legs. A hundred founding places for UK riders.">
+<meta property="og:title" content="FORMA · The AI cycling coach that remembers what you tell it">
+<meta property="og:description" content="An AI cycling coach that remembers every ride and every conversation, and coaches your head as well as your legs. A hundred founding places for UK riders.">
 <meta property="og:url" content="https://ridewithforma.com">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ridewithforma.com/img/og-card.png?v=2">
@@ -17,8 +17,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="FORMA. The plan bends. The goal holds.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FORMA · A coach for the head, not just the engine">
-<meta name="twitter:description" content="Not a plan you adapt to. A coach that adapts to you, and trains the part that quits first. Invite only: a hundred founding places at £14.99 a month.">
+<meta name="twitter:title" content="FORMA · The AI cycling coach that remembers what you tell it">
+<meta name="twitter:description" content="An AI cycling coach that remembers every ride and every conversation, and coaches your head as well as your legs. A hundred founding places for UK riders.">
 <meta name="twitter:image" content="https://ridewithforma.com/img/og-card.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +82,7 @@
   @media (min-width:641px){ .joinlink .joinshort{display:none} }
   /* Under ~400px even the shortened row loses to the lockup, so the header
      wraps into two tidy rows rather than shedding the login link. */
-  @media (max-width:400px){
+  @media (max-width:480px){
     header .wrap{flex-wrap:wrap;row-gap:10px}
     .headright{width:100%;justify-content:flex-start}
   }
@@ -95,7 +95,9 @@
 
   .hero{position:relative;padding:112px 0 96px;background:var(--carbon)}
     .hero .wrap{position:relative}
-  .hero h1{font-size:clamp(46px,8.4vw,84px);margin:22px 0 30px;color:#F0F0EC}
+  .hero h1{font-size:clamp(34px,6.6vw,72px);margin:22px 0 30px;color:#F0F0EC;text-wrap:balance}
+  .hero p.offer{font-size:16px;margin-top:16px;color:rgba(240,240,236,.72)}
+  .closing{padding:8px 0 72px}
   .hero p.lede{font-size:20px;max-width:600px;color:rgba(240,240,236,.9)}
   .hero .kicker.flamme{color:#F0F0EC}
   .livechip{display:inline-flex;align-items:center;gap:10px}
@@ -110,7 +112,7 @@
 
   .sect{padding:64px 0}
   .sect .num{font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:600;color:var(--flamme);line-height:1}
-  .sect h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(30px,4.6vw,40px);letter-spacing:-.02em;line-height:1.06;margin:14px 0 18px}
+  .sect h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(28px,4.6vw,40px);letter-spacing:-.02em;line-height:1.06;margin:14px 0 18px}
   .sect p{max-width:600px;color:#3C3C3A}
   .sect p+p{margin-top:14px}
   .vignette{margin-top:22px;border-left:3px solid var(--flamme);padding:16px 22px;background:var(--paper);max-width:600px}
@@ -141,7 +143,7 @@
   .club p{max-width:600px;color:#3C3C3A}
 
   .form-block{padding:64px 0 104px}
-  .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:36px;letter-spacing:-.02em;line-height:1.06;margin:16px 0 24px}
+  .form-block h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(30px,4.6vw,36px);letter-spacing:-.02em;line-height:1.06;margin:16px 0 24px}
   form,.sharerow{display:flex;gap:0;max-width:600px;margin-top:8px}
   #waitlist-form input[name=name]{flex:1 1 140px}
   #waitlist-form input[name=email]{flex:2 1 190px}
@@ -169,6 +171,7 @@
   /* The founder band is taller so the rider and the switchbacks above him
      both fit, centred so a phone's square crop keeps him. */
   .founderband img{height:clamp(380px,46vw,640px);object-position:50% 35%}
+  @media (max-width:640px){ .inkband .cap .wrap{flex-direction:column;gap:4px} }
   @media (max-width:640px){ .founderband .cap .wrap{flex-direction:column;gap:4px} .founderband .pbsep{display:none} .founderband .cap span .nb{display:block} }
   .proofrow{display:flex;flex-wrap:wrap;gap:34px;margin-top:26px}
   .proofrow .item{max-width:250px}
@@ -224,17 +227,18 @@
 <header>
   <div class="wrap">
     <svg class="lockup" viewBox="118.99 121.48 762.02 107.04" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FORMA"><path fill="#0b0b0c" d="M149.51,226.72h-30.52v-103.44h101.63v22.7h-71.11v20.9h63.3v22.7h-63.3v37.14Z"/><path fill="#0b0b0c" d="M298.65,228.52h0c-13.83,0-25.83-2.13-36-6.39-10.17-4.26-18.02-10.37-23.53-18.34-5.51-7.97-8.27-17.56-8.27-28.79h0c0-11.23,2.76-20.82,8.27-28.79,5.51-7.97,13.36-14.08,23.53-18.34,10.17-4.26,22.17-6.39,36-6.39h0c14.03,0,26.11,2.13,36.24,6.39,10.12,4.26,17.94,10.37,23.45,18.34,5.51,7.97,8.27,17.56,8.27,28.79h0c0,11.23-2.76,20.82-8.27,28.79-5.51,7.97-13.33,14.08-23.45,18.34-10.13,4.26-22.21,6.39-36.24,6.39ZM298.65,205.82h0c5.41,0,10.35-.65,14.81-1.95,4.46-1.31,8.29-3.21,11.5-5.72,3.21-2.5,5.69-5.58,7.45-9.24,1.75-3.66,2.63-7.75,2.63-12.26h0v-3.6c0-4.41-.88-8.42-2.63-12.03-1.76-3.61-4.24-6.66-7.45-9.17s-7.04-4.41-11.5-5.72c-4.46-1.3-9.4-1.95-14.81-1.95h0c-5.41,0-10.32.65-14.73,1.95-4.41,1.31-8.25,3.21-11.5,5.72-3.26,2.51-5.74,5.56-7.44,9.17-1.71,3.61-2.56,7.62-2.56,12.03h0v3.6c0,4.51.85,8.6,2.56,12.26,1.7,3.66,4.18,6.74,7.44,9.24,3.25,2.51,7.09,4.41,11.5,5.72,4.41,1.3,9.32,1.95,14.73,1.95Z"/><path fill="#0b0b0c" d="M413.42,226.72h-30.52v-103.44h86c7.51,0,13.73,1.55,18.64,4.66,4.91,3.11,8.62,7.19,11.13,12.26,2.5,5.06,3.75,10.6,3.75,16.61h0c0,6.51-1.55,12.45-4.66,17.82-3.11,5.36-7.77,9.59-13.98,12.7h0l21.05,39.39h-34.58l-17.14-34.43h-39.69v34.43ZM413.42,145.98v23.76h45.4c3.71,0,6.67-1.1,8.87-3.31,2.21-2.21,3.31-5.16,3.31-8.87h0c0-2.41-.5-4.49-1.5-6.24-1-1.75-2.4-3.08-4.21-3.98-1.81-.91-3.96-1.36-6.47-1.36h-45.4Z"/><path fill="#0b0b0c" d="M550.88,226.72h-28.86v-103.44h47.81l17.74,44.96c.8,1.8,1.68,4.1,2.63,6.91.95,2.81,1.9,5.69,2.85,8.65.95,2.95,1.83,5.58,2.63,7.89h1.06c.6-2.11,1.38-4.56,2.33-7.37.95-2.81,1.95-5.64,3-8.49,1.05-2.86,1.98-5.39,2.79-7.59h0l17.74-44.96h46.45v103.44h-30.52v-53.37c0-2.11.03-4.46.08-7.07.05-2.61.12-5.16.22-7.67.1-2.51.15-4.66.15-6.46h-1.2c-.6,1.9-1.35,4.15-2.25,6.76-.91,2.61-1.78,5.19-2.63,7.75-.85,2.55-1.68,4.78-2.49,6.69h0l-21.65,53.37h-27.96l-21.8-53.37c-1-2.61-1.98-5.26-2.93-7.97-.95-2.71-1.81-5.24-2.56-7.59-.75-2.36-1.37-4.24-1.88-5.64h-1.2c.1,1.4.18,3.25.23,5.56.05,2.31.1,4.81.15,7.52.05,2.71.07,5.41.07,8.12h0v53.37Z"/><path fill="#0b0b0c" d="M712.15,226.72h-31.57l50.81-103.44h34.13l50.82,103.44h-33.23l-7.81-16.54h-55.33l-7.82,16.54ZM739.51,166.73l-9.32,21.05h34.88l-9.32-21.05c-.4-.9-.95-2.23-1.65-3.98-.71-1.75-1.46-3.61-2.26-5.57-.8-1.95-1.5-3.76-2.1-5.41-.6-1.65-1.1-2.88-1.51-3.68h-1.05c-.7,1.81-1.55,3.91-2.55,6.31-1.01,2.41-1.94,4.71-2.79,6.92-.85,2.21-1.62,4.01-2.33,5.41h0Z"/><polygon fill="#FF3D00" points="835.91 189.52 881.01 189.52 858.41 228.52 835.91 189.52"/></svg>
-    <span class="headright"><a class="kicker journallink" href="/journal/">Journal</a><a class="kicker riderlink" href="https://app.ridewithforma.com/login">Rider login</a><a class="kicker joinlink" href="#waitlist"><span class="joinlong">Join the hundred&nbsp;→</span><span class="joinshort">Join&nbsp;→</span></a></span>
+    <span class="headright"><a class="kicker journallink" href="/journal/">Journal</a><a class="kicker riderlink" href="https://app.ridewithforma.com/login">Rider login</a><a class="kicker joinlink" href="#waitlist"><span class="joinlong">Hold your place&nbsp;→</span><span class="joinshort">Hold your place&nbsp;→</span></a></span>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="kicker flamme livechip"><span class="d pulse"></span><span class="chiptext">A COACH FOR THE HEAD, NOT JUST THE ENGINE</span></p>
-      <h1 class="display">The plan bends.<br>The goal holds.</h1>
-      <p class="lede">The pros have an entire team finding their gains. Forma is that team, in your jersey pocket: a coach that remembers every ride and every conversation, and builds your season around the life you actually live.</p>
-      <p style="margin-top:36px"><a class="cta" href="#waitlist">Join the founding&nbsp;<span class="nb">hundred&nbsp;<span class="arrow">→</span></span></a></p>
+      <p class="kicker flamme livechip"><span class="d pulse"></span><span class="chiptext"><span class="nb">INVITE ONLY ·</span> <span class="nb">A HUNDRED FOUNDING PLACES</span></span></p>
+      <h1 class="display">Mention the wedding once.<br>Forma plans that week with&nbsp;you.</h1>
+      <p class="lede">Forma is an AI cycling coach that remembers every ride and every conversation. It builds your season backwards from the ride you’re aiming at, and when life gets in the way, it rewrites the next fortnight with you. It coaches your head as well as your legs, and I learned why that matters in a decade inside Team Sky and British&nbsp;Cycling.</p>
+      <p class="offer">A hundred founding UK riders pay £14.99&nbsp;a&nbsp;month instead of £19.99, locked for as long as they stay&nbsp;subscribed.</p>
+      <p style="margin-top:36px"><a class="cta" href="#waitlist">Hold your&nbsp;<span class="nb">place&nbsp;<span class="arrow">&rarr;</span></span></a></p>
     </div>
   </section>
 
@@ -246,13 +250,13 @@
   <section class="sect reveal">
     <div class="wrap">
       <p class="kicker">THE PLATEAU</p>
-      <h2>You're not undertrained. You're unsystematic.</h2>
-      <p>You ride eight hours a week when life allows it. You own the power meter, the good tyres, possibly the aero socks. And the number that matters hasn't moved in two seasons.</p>
-      <p>Not because you lack the engine. Because your options have always been two kinds of guessing. Invent the week yourself: sessions picked on feel, fuelling approximate, recovery whatever's left over after work. Or download the twelve-week plan written for ten thousand riders at once, the one that prescribes the same Tuesday whether you slept eight hours or four, and falls apart the first time your life refuses to follow the PDF.</p>
-      <p>The riders who broke through didn't find more hours. They got a system built around one rider.</p>
+      <h2>Your plan doesn’t know you slept four&nbsp;hours.</h2>
+      <p>You ride eight hours a week when life allows it. You own the power meter, the good tyres, possibly the aero socks. And your FTP, the power you can hold for about an hour, hasn’t moved in two&nbsp;seasons.</p>
+      <p>Until now you’ve had two options, and both are guesswork. You can invent the week yourself, with sessions picked on feel, fuelling roughly right and recovery fitted around work. Or you can download a twelve-week plan written for ten thousand riders at once. It sets the same Tuesday session whether you slept eight hours or four, and it falls apart the first time your life doesn’t follow the&nbsp;PDF.</p>
+      <p>Riders who keep improving for years have someone who knows their life as well as their numbers, and plans each week around both. That’s the job Forma&nbsp;does.</p>
       <figure class="proof phone">
         <img src="/img/m-training.webp" alt="Forma on a phone: Plan for Sa Calobra Mallorca sub 30, build phase week 3 of 7, the week's named sessions and a rest day that says resist the urge" loading="lazy" decoding="async" width="860" height="1862">
-        <figcaption class="cap">The founder's actual plan, mid build. Every card written for one rider.</figcaption>
+        <figcaption class="cap">My own plan for Sa Calobra, in week three of seven. Every session on it was written for&nbsp;me.</figcaption>
       </figure>
     </div>
   </section>
@@ -262,14 +266,14 @@
   <section class="sect reveal">
     <div class="wrap">
       <p class="num">01</p>
-      <h2>A coach who remembers everything.</h2>
-      <p>Every ride you've ever done. Every conversation. The dodgy knee, the night shifts, the crosswind that broke you last September. A sports scientist would stop at the numbers. Forma is also the mindset coach and the confidant: it notices when work is crushing you, asks how you're actually sleeping, and writes next week around the answer.</p>
+      <h2>It remembers what you tell&nbsp;it.</h2>
+      <p>It keeps every ride you’ve done and every conversation you’ve had with it, so it knows about the dodgy knee, the night shifts and the crosswind that broke you last September. Each week it asks how you’re sleeping and whether work is getting on top of you, and when life gets in the way, it rewrites the next fortnight with&nbsp;you.</p>
       <div class="vignette">
-        <p>You mention a wedding in June, once, in passing. Come June, the plan has already made room: the big week arrives early, the wedding weekend becomes rest days, and the goal date never moves.</p>
+        <p>I asked it for a Sa Calobra plan three days after a crash. I didn’t mention the crash in that message. It brought it up before it wrote a single&nbsp;session.</p>
       </div>
       <figure class="proof" style="max-width:430px">
         <img src="/img/m-crash.webp" alt="A real Forma exchange: the founder asks for a Sa Calobra plan, and the coach first flags his crash three days earlier and asks whether the frame and fork have been checked" loading="lazy" decoding="async" width="860" height="1202">
-        <figcaption class="cap">A real exchange from the founder's own training log. Trimmed for length, never reworded.</figcaption>
+        <figcaption class="cap">From my own training log. Trimmed for length, never&nbsp;reworded.</figcaption>
       </figure>
     </div>
   </section>
@@ -278,11 +282,10 @@
     <div class="wrap">
       <p class="num">02</p>
       <h2>Marginal gains, without the wind tunnel.</h2>
-      <p>The doctrine I watched work for a decade was never about £7,000 wheels. It's the wind read before you roll out, the chain waxed instead of oiled, the carbs eaten before you feel like you need them. Forma briefs you before every ride: where today's wind helps, where it bites, what to wear, how to fuel. On the morning of your goal event it draws your route coloured by headwind and tailwind and tells you where to spend and where to save.</p>
-      <p>Compound improvements. Invisible in isolation. Significant over time.</p>
+      <p>Most of the marginal gains I watched work for a decade cost very little: reading the wind before you roll out, waxing the chain instead of oiling it, eating before you feel you need to. Each day, Forma briefs you on where the wind will help and where it will be against you, and what to wear and carry. On the morning of your goal event, if you’ve given it the course GPX, it draws your route coloured by headwind and tailwind, and tells you where to spend your effort and where to save&nbsp;it.</p>
       <figure class="proof phone">
-        <img src="/img/m-ride.webp" alt="Forma on a phone: the founder's Sa Calobra PB, 29 minutes 53, with the ride's stats read against a 290W FTP" loading="lazy" decoding="async" width="860" height="1862">
-        <figcaption class="cap">The founder's Sa Calobra PB inside Forma. Every ride ends with the coach's read.</figcaption>
+        <img src="/img/m-ride.webp" alt="Forma on a phone: the founder's Sa Calobra PB, 29 minutes 53 seconds, with power, intensity and TSS calculated from a 290W FTP" loading="lazy" decoding="async" width="860" height="1862">
+        <figcaption class="cap">My Sa Calobra PB as Forma shows&nbsp;it.</figcaption>
       </figure>
     </div>
   </section>
@@ -290,13 +293,73 @@
   <section class="sect reveal">
     <div class="wrap">
       <p class="num">03</p>
-      <h2>And it trains the part that quits first.</h2>
-      <p>Your legs rarely fail before your head does. Forma coaches both, wrapped around every session. Before you clip in, a briefing: what today is for, what the weather is doing, where your head needs to be. During, the words in your ear pacing the intervals on the turbo. After, a debrief that reads your ride against the conditions instead of calling a headwind a bad day. And on race-day morning, the talk that settles you before the flag drops.</p>
-      <p>It even starts before the plan exists. Forma doesn't take a date and a GPX file and call it a goal: it asks why this one matters and who it's turning you into, then holds onto your answer until the morning you need it back.</p>
+      <h2>And it coaches your head&nbsp;too.</h2>
+      <p>Your legs rarely give up before your head does, so Forma coaches both. Before you clip in, it tells you what today’s session is for and where your head needs to be. On the turbo, it talks you through the intervals. Afterwards, it reads your ride against the conditions, so a headwind doesn’t get logged as a bad day. On race-day morning, it helps you settle before the&nbsp;start.</p>
+      <p>When you talk a goal through with it, it asks why the goal matters to you and what you’d know about yourself at the finish. It keeps your answer and shows it to you again on race-day&nbsp;morning.</p>
       <figure class="proof" style="max-width:430px">
         <img src="/img/m-becoming.webp" alt="A real Forma exchange: the founder says the goal would matter even if nobody saw it, and the coach asks what he would know about himself at the top of Coll dels Reis that he does not know now" loading="lazy" decoding="async" width="860" height="1055">
-        <figcaption class="cap">A real exchange from the founder's training log. This is what goal setting sounds like here.</figcaption>
+        <figcaption class="cap">From my training log: the conversation about why my Sa Calobra goal&nbsp;mattered.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="inkband reveal">
+    <img src="/img/passes/formentor-cloud-1280.webp" srcset="/img/passes/formentor-cloud-1280.webp 1280w, /img/passes/formentor-cloud-2000.webp 2000w" sizes="100vw" alt="A mountain peak on the Formentor peninsula rising out of a sea of cloud, photographed by Gareth Winter" loading="lazy" decoding="async" width="2000" height="1333" style="object-position:55% 80%">
+    <div class="cap"><div class="wrap"><span>FORMENTOR · ABOVE THE CLOUD</span><span>PHOTO: GARETH WINTER</span></div></div>
+  </section>
+
+  <section class="ruleout reveal">
+    <div class="wrap">
+      <p><span class="quiet">Strava tells you what you did.</span> Forma remembers what you’ve told it, tells you what to do next, and talks you through it on the&nbsp;turbo.</p>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="club reveal">
+    <div class="wrap">
+      <p class="kicker">THE FOUNDING HUNDRED</p>
+      <div class="display big">100.</div>
+      <h2>That’s the whole club.</h2>
+      <p class="kicker queue"></p>
+      <p>A hundred founding riders get the coach that remembers what they tell it and coaches their head as well as their legs, the daily briefings, and a plan it rewrites with them when life gets in the way. I also read every founding rider’s first month and write&nbsp;back.</p>
+      <p>A human coach costs £150 to £250 a month at typical UK rates, before the bike fit and the testing. Forma is £19.99 a month. The founding hundred pay £14.99, locked for as long as they stay&nbsp;subscribed.</p>
+      <p>Why only a hundred? Because reading every first month myself is the promise, and a hundred is as many riders as I can honestly keep it for. When the hundred places are gone, so is the&nbsp;£14.99.</p>
+    </div>
+  </section>
+
+  <section class="form-block reveal" id="waitlist">
+    <div class="wrap">
+      <p class="kicker">THE WAITLIST</p>
+      <h2>Hold your place.</h2>
+      <p style="max-width:600px">Invites go out in queue order, and the founding hundred pay £14.99&nbsp;a&nbsp;month, locked for as long as they stay subscribed. Until yours arrives I’ll send you one letter a week with the fuelling maths, the cheap marginal gains and the numbers from my own testing. The letters are&nbsp;free.</p>
+      <p class="kicker queue"></p>
+      <form id="waitlist-form" action="https://gareth-coaching-api-production.up.railway.app/api/v1/waitlist" method="POST">
+        <input type="text" name="name" required autocomplete="given-name" placeholder="First name" aria-label="First name" maxlength="80">
+        <input type="email" name="email" required autocomplete="email" placeholder="you@youremail.com" aria-label="Email address">
+        <button type="submit">Hold your place</button>
+      </form>
+      <div class="receipt" id="receipt" role="status"><span class="nb">PLACE HELD <span class="dotline">·</span></span> <span class="nb">FIRST LETTER ON ITS WAY</span></div>
+      <div class="held" id="held">
+        <div id="ask">
+          <p class="kicker">ONE QUESTION</p>
+          <p class="askq">What ride are you aiming&nbsp;at?</p>
+          <form id="goal-form">
+            <input type="text" id="goal" maxlength="280" placeholder="Marmotte, July" aria-label="The ride you are aiming at">
+            <button type="submit">Tell me</button>
+          </form>
+          <p class="fine">Optional, and answering just means I turn up prepared. <button type="button" class="linkbtn" id="goal-skip">Skip this</button></p>
+        </div>
+        <div class="share" id="share">
+          <p class="kicker">YOUR LINK</p>
+          <div class="sharerow">
+            <input type="text" class="shareurl" id="share-url" readonly aria-label="Your share link">
+            <button type="button" id="share-copy">Copy</button>
+          </div>
+          <p class="fine">Send it to the rider you train with. Every rider who joins on your link moves you up the&nbsp;queue.</p>
+        </div>
+      </div>
+      <p class="fine">One letter a week until your invite arrives. Reply &ldquo;stop&rdquo; to any of them and you&rsquo;re off the&nbsp;list.</p>
     </div>
   </section>
 
@@ -305,28 +368,28 @@
   <section class="sect reveal story">
     <div class="wrap">
       <p class="kicker">WHY FORMA EXISTS</p>
-      <h2>Talent was never the missing ingredient in my family. The system was.</h2>
-      <p>My grandfather raced time trials in post-war Britain, training by feel between <strong>RAF shifts</strong>, riding <strong>88 miles each way</strong> on weekends to see my grandmother. My dad built wheels, led the Surrey League as a young rider, then three boys arrived and the racing stopped. I grew up riding to school on the back of his tandem.</p>
+      <h2>My grandfather and my dad never had a&nbsp;coach.</h2>
+      <p>My grandfather raced time trials in post-war Britain, training by feel between <strong>RAF shifts</strong> and riding <strong>88 miles each way</strong> at weekends to see my grandmother. My dad built wheels and led the Surrey League as a young rider, then three boys arrived and the racing stopped. I grew up riding to school on the back of his&nbsp;tandem.</p>
       <div class="photorow">
         <figure>
           <img src="/img/martyn-track.jpg" alt="Martyn Winter racing on the track, black and white photograph" loading="lazy" width="1000" height="696">
-          <figcaption>Martyn Winter · the first generation · trained by feel</figcaption>
+          <figcaption>Martyn Winter · the first generation · trained by&nbsp;feel</figcaption>
         </figure>
         <figure>
           <img src="/img/martyn-corner.jpg" alt="Martyn Winter cornering at speed in later years" loading="lazy" width="675" height="1000">
-          <figcaption>Martyn · still racing · the engine never left</figcaption>
+          <figcaption>Martyn · still racing in later&nbsp;years</figcaption>
         </figure>
         <figure>
           <img src="/img/hour-record.jpg" alt="Gareth Winter trackside with Sir Bradley Wiggins at the Hour Record" loading="lazy" width="1200" height="798">
-          <figcaption>The Hour Record · trackside with Sir Bradley Wiggins</figcaption>
+          <figcaption>The Hour Record · trackside with Sir&nbsp;Bradley&nbsp;Wiggins</figcaption>
         </figure>
       </div>
       <div class="founderrow">
         <div>
-          <p>Then I spent a decade inside <strong>Team Sky</strong> and <strong>British Cycling</strong>, and I finally saw what my grandfather and my father never had. Not the legs. They had the legs. The coaches, the numbers people, the psychologists: the system that turns an engine into results.</p>
-          <p>Forma is that system, finally in reach. I built it for the rider with the engine, the job and the family. Which is to say, I built it for us.</p>
+          <p>Then I spent a decade inside <strong>Team Sky</strong> and <strong>British Cycling</strong>, and saw what my grandfather and my dad never had: the coaches, the performance analysts and the&nbsp;psychologists.</p>
+          <p>My grandfather fitted his training around RAF shifts, my dad fitted his around a job and three boys, and neither had anyone planning it for them. I built Forma so riders with a job and a family, me included, can have a coach who plans around all of&nbsp;it.</p>
           <p class="sig">Gareth Winter</p>
-          <p style="margin-top:26px"><a class="cta ink" href="#waitlist">Ride with&nbsp;<span class="nb">us&nbsp;<span class="arrow">&rarr;</span></span></a></p>
+          <p style="margin-top:26px"><a class="cta ink" href="#waitlist">Hold your&nbsp;<span class="nb">place&nbsp;<span class="arrow">&rarr;</span></span></a></p>
         </div>
         <figure>
           <img src="/img/gareth-portrait.jpg" alt="Gareth Winter in riding kit, mountains behind" loading="lazy" width="800" height="1200">
@@ -345,10 +408,10 @@
     <div class="wrap">
       <p class="kicker">PALMARÈS</p>
       <div class="proofrow">
-        <div class="item"><p class="big">2011 to 2019</p><p class="lab">Inside Team Sky and British Cycling, watching marginal gains practised rather than preached</p></div>
-        <div class="item"><p class="big">Veloforte</p><p class="lab">Creative director at the UK's fastest-growing sports nutrition company, where fuelling stopped being an afterthought</p></div>
-        <div class="item"><p class="big">Mindvalley</p><p class="lab">Creative director and head of content at the world's leading personal transformation platform</p></div>
-        <div class="item"><p class="big">The people</p><p class="lab">Twenty years building work with the best minds in performance, coaching, longevity, mindset and self-mastery. Forma is what happens when all of that gets pointed at one bike</p></div>
+        <div class="item"><p class="big">2011 to 2019</p><p class="lab">Inside Team Sky and British Cycling, watching marginal gains done day to day</p></div>
+        <div class="item"><p class="big">Veloforte</p><p class="lab">Creative director at the UK’s fastest-growing sports nutrition&nbsp;company</p></div>
+        <div class="item"><p class="big">Mindvalley</p><p class="lab">Creative director and head of content, working with teachers of mindset and performance</p></div>
+        <div class="item"><p class="big">The people</p><p class="lab">Twenty years working with experts in performance, coaching, longevity and mindset. Forma puts what I learned from them into one coach for one rider</p></div>
       </div>
     </div>
   </section>
@@ -358,8 +421,8 @@
   <section class="sect reveal">
     <div class="wrap">
       <p class="kicker">THE JOURNAL</p>
-      <h2>Everything here, I have actually tested.</h2>
-      <p>Long-form writing on the gains worth chasing, the head that quits before the legs do, and training that has to survive a job. No sponsored roundups, no listicles, no gear I haven't ridden.</p>
+      <h2>I’ve tested everything I write about&nbsp;here.</h2>
+      <p>Long reads on cheap marginal gains, the mental side of riding, and training when you have a full-time job. There are no sponsored roundups or&nbsp;listicles.</p>
       <div class="journalrow">
         <a class="jcard" href="/journal/sa-calobra/">
           <span class="kicker flamme">The head</span>
@@ -368,37 +431,16 @@
         </a>
         <a class="jcard" href="/journal/chain-wax/">
           <span class="kicker flamme">Marginal gains</span>
-          <span class="jt">I haven't cleaned a chain in 10 years.</span>
+          <span class="jt">I haven’t cleaned a chain in 10 years.</span>
           <span class="jd">The friction data, the wear data, and what waxing actually costs.</span>
         </a>
         <a class="jcard" href="/journal/what-testing-told-me/">
           <span class="kicker flamme">Marginal gains</span>
           <span class="jt">The calculator was wrong about me by 225 calories a day.</span>
-          <span class="jd">An 11 per cent error I'd been repeating daily for years.</span>
+          <span class="jd">My resting metabolism was 11 per cent higher than the calculator&nbsp;said.</span>
         </a>
       </div>
       <p style="margin-top:26px"><a class="jall kicker" href="/journal/">All journal entries →</a></p>
-    </div>
-  </section>
-
-  <section class="ruleout reveal">
-    <div class="wrap">
-      <p><span class="quiet">Strava tells you what you did.</span> Forma tells you what to do next, remembers it, and rides with you while you do it.</p>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="rule"></div>
-
-  <section class="club reveal">
-    <div class="wrap">
-      <p class="kicker">THE FOUNDING HUNDRED</p>
-      <div class="display big">100.</div>
-      <h2>That's the whole club.</h2>
-      <p class="kicker queue"></p>
-      <p>One hundred founding members get the coach, the memory, the pre-ride briefings, the plan that rebuilds itself around your life, and a founder who reads your first month personally and writes back.</p>
-      <p>A human coach runs £150 to £250 a month at typical UK rates, before the bike fit and the testing. Forma is £19.99 a month. The founding hundred ride at £14.99, locked for as long as they stay subscribed.</p>
-      <p>Why only a hundred? Because I read every founding rider's first month myself, and a hundred is the honest limit of that promise. When the hundred places are gone, so is the £14.99.</p>
-      <p style="margin-top:32px"><a class="cta ink" href="#waitlist">Hold a place<span class="nb">&nbsp;<span class="arrow">&rarr;</span></span></a></p>
     </div>
   </section>
 
@@ -408,63 +450,31 @@
     <div class="wrap">
       <p class="kicker">FAIR QUESTIONS</p>
       <dl>
+        <dt>Is the coach a person?</dt>
+        <dd>No. Forma is an AI coach. Anthropic’s Claude models write its replies, working from what I’ve learned in cycling. Nobody checks a reply before you read it, so it can be wrong, and it isn’t medical advice. I read every founding rider’s first month afterwards, and I answer the&nbsp;emails.</dd>
         <dt>I already have TrainerRoad.</dt>
-        <dd>Keep it if it's working. It gives you workouts. It doesn't remember your knee, reroute your season around a wedding, read the wind before your ride, or talk you off the ledge on race-day morning. Different job.</dd>
-        <dt>I don't have ten hours a week.</dt>
-        <dd>Neither do I. Forma plans inside the hours you actually have, and when the week collapses, the plan bends instead of shaming you.</dd>
+        <dd>Keep it if it’s working. Forma writes your plan and runs your indoor sessions too, so you’d use it in place of TrainerRoad. What it adds is the memory of your knee and your wedding, a daily read of the wind, and someone to talk to on race-day&nbsp;morning.</dd>
+        <dt>I don’t have ten hours a week.</dt>
+        <dd>Neither do I. Forma plans inside the hours you tell it you&nbsp;have.</dd>
         <dt>I always fall off the plan by week three.</dt>
-        <dd>Everyone does; week three is when life shouts loudest. Forma is built for the return, not the streak: a missed week is data, the plan rebuilds itself around it, and nobody makes you pay the sessions back. And if you go quiet, it notices and emails you.</dd>
+        <dd>Most people do, usually when work or family takes over. Tell Forma what happened and it rewrites the coming fortnight with you, once you say yes. It never asks you to make the missed sessions&nbsp;up.</dd>
         <dt>Is the mindset stuff woo?</dt>
-        <dd>It's the talk in the team car, not incense. I sat in the room when Professor Steve Peters taught this at Sky. Your head is equipment. It trains.</dd>
-        <dt>I ride Garmin. Or Wahoo. Or something older.</dt>
-        <dd>All of it works. Wahoo links directly, so rides turn up on their own once your ELEMNT syncs. Everyone else uploads FIT, GPX or TCX files, points Forma at a Dropbox folder, or imports their whole history from the archive Strava or Garmin lets you download, ten years in about fifteen minutes.</dd>
+        <dd>No. I sat in the room when Professor Steve Peters taught it at Sky, and it’s practical: what to think about on the start line, what to do when a climb starts going badly, and how to stop one bad session spoiling the&nbsp;week.</dd>
+        <dt>I ride Garmin. Or Wahoo. Or something&nbsp;older.</dt>
+        <dd>All of it works. Wahoo links directly, so rides turn up on their own once your ELEMNT syncs. Everyone else uploads FIT, GPX or TCX files, points Forma at a Dropbox folder, or imports their whole history from the archive Strava or Garmin lets you download, ten years in about fifteen&nbsp;minutes.</dd>
         <dt>Is there an app to download?</dt>
-        <dd>No, and you don't need one. Forma runs in your browser, on your phone or your laptop. Indoor sessions run in Chrome on a laptop or desktop, paired to a Bluetooth smart trainer, and Forma sets the resistance for you.</dd>
+        <dd>No, and you don’t need one. Forma runs in your browser, on your phone or your laptop. Indoor sessions run in Chrome on a laptop or desktop, paired to a Bluetooth smart trainer, and Forma sets the resistance for&nbsp;you.</dd>
+        <dt>I’m not in the UK.</dt>
+        <dd>For now Forma is open to riders in the UK only. Hold your place anyway and reply to my first letter with where you live, and I’ll tell you the day it opens&nbsp;there.</dd>
         <dt>What happens to my data?</dt>
-        <dd>It's yours. Export it or delete it whenever you like, and it is never sold. Your GPS traces stay on our own server, right down to working out place names offline; the one part that leaves is a ride's start point, which goes to a weather service so I can tell you what the wind actually did to you. The coaching itself is written by Anthropic's Claude models, so your conversations and ride summaries go to Anthropic to be answered, and they don't use them to train their models.</dd>
+        <dd>It’s yours. Export it or delete it whenever you like, and it’s never sold. Your GPS traces stay on our own server, down to working out place names offline. A ride’s start point and time go to a weather service so I can tell you what the wind did to you. When the app shows a map, your browser fetches the map images for that area from CARTO, and if you use voice, the text of each reply goes to ElevenLabs to be spoken. Your conversations and ride summaries go to Anthropic to be answered, and Anthropic doesn’t use them to train its&nbsp;models.</dd>
       </dl>
     </div>
   </section>
 
-  <div class="wrap"><hr class="rule"></div>
-
-  <section class="inkband reveal">
-    <img src="/img/passes/formentor-cloud-1280.webp" srcset="/img/passes/formentor-cloud-1280.webp 1280w, /img/passes/formentor-cloud-2000.webp 2000w" sizes="100vw" alt="A mountain peak on the Formentor peninsula rising out of a sea of cloud, photographed by Gareth Winter" loading="lazy" decoding="async" width="2000" height="1333" style="object-position:55% 80%">
-    <div class="cap"><div class="wrap"><span>FORMENTOR · ABOVE THE CLOUD</span><span>INVITES GO OUT IN ORDER</span></div></div>
-  </section>
-
-  <section class="form-block reveal" id="waitlist">
+  <section class="closing reveal">
     <div class="wrap">
-      <p class="kicker">THE WAITLIST</p>
-      <h2>Hold your place.</h2>
-      <p style="max-width:600px">Forma is invite only for now. Join the list and invites go out in queue order when the doors open, and the first hundred ride at £14.99 a month, locked for as long as they stay subscribed. Until yours arrives I'll send you one letter a week: the fuelling maths, the free marginal gains, the real numbers from my own testing. You'll be faster by the time you're in, without paying a penny. That's the deal.</p>
-      <p class="kicker queue"></p>
-      <form id="waitlist-form" action="https://gareth-coaching-api-production.up.railway.app/api/v1/waitlist" method="POST">
-        <input type="text" name="name" required autocomplete="given-name" placeholder="First name" aria-label="First name" maxlength="80">
-        <input type="email" name="email" required autocomplete="email" placeholder="you@youremail.com" aria-label="Email address">
-        <button type="submit">Join the hundred</button>
-      </form>
-      <div class="receipt" id="receipt" role="status">PLACE HELD <span class="dotline">·</span> FIRST LETTER ON ITS WAY</div>
-      <div class="held" id="held">
-        <div id="ask">
-          <p class="kicker">ONE QUESTION</p>
-          <p class="askq">What ride are you aiming at?</p>
-          <form id="goal-form">
-            <input type="text" id="goal" maxlength="280" placeholder="Marmotte, July" aria-label="The ride you are aiming at">
-            <button type="submit">Tell me</button>
-          </form>
-          <p class="fine">Optional, and answering just means I turn up prepared. <button type="button" class="linkbtn" id="goal-skip">Skip this</button></p>
-        </div>
-        <div class="share" id="share">
-          <p class="kicker">YOUR LINK</p>
-          <div class="sharerow">
-            <input type="text" class="shareurl" id="share-url" readonly aria-label="Your share link">
-            <button type="button" id="share-copy">Copy</button>
-          </div>
-          <p class="fine">Every rider who joins on this link moves you up the queue.</p>
-        </div>
-      </div>
-      <p class="fine">One letter a week until your invite arrives. Reply &ldquo;stop&rdquo; to any of them and you&rsquo;re off the list. No spam, ever.</p>
+      <p><a class="cta" href="#waitlist">Hold your&nbsp;<span class="nb">place&nbsp;<span class="arrow">&rarr;</span></span></a></p>
     </div>
   </section>
 </main>
@@ -497,7 +507,7 @@
     if (!(n >= QUEUE_MIN)) return;
     // Each half holds together so the line never drops a lone word on mobile.
     const line = '<span class="nb"><span class="n">' + n.toLocaleString('en-GB') +
-      '</span> riders waiting.</span> <span class="nb">' + places + ' places.</span>';
+      '</span> riders waiting.</span> <span class="nb">' + places + ' founding places.</span>';
     for (const el of queue) { el.innerHTML = line; el.classList.add('on'); }
   }
 
@@ -561,7 +571,7 @@
     e.preventDefault();
     const goal = document.getElementById('goal').value.trim();
     if (!goal) { thank("No problem. The first letter is on its way."); return; }
-    thank("Noted. I'll have that in front of me when your place comes up.");
+    thank("Noted. I’ll have that in front of me when your place comes up.");
     // The answer is a bonus, not a gate, so a failed save never lands on them.
     try {
       await fetch(API + '/waitlist/goal', {
