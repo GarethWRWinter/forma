@@ -36,7 +36,7 @@ header .lockup{height:22px;width:auto;display:block;flex:none}
 @media (min-width:641px){ .joinlink .joinshort{display:none} }
 /* Under ~400px even the shortened row loses to the lockup, so the header
    wraps into two tidy rows rather than shedding the login link. */
-@media (max-width:400px){
+@media (max-width:480px){
   header .wrap{flex-wrap:wrap}
   .headright{width:100%;justify-content:flex-start}
 }
